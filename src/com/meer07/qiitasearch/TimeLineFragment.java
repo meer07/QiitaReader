@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class TimeLineFragment extends ListFragment {
+	public String path = "/items";
 	private ListAdapter adapter;
 	@Override
 	public void onCreate(Bundle savedInstanceState){
@@ -14,7 +15,7 @@ public class TimeLineFragment extends ListFragment {
 		
 		adapter = new ListAdapter(getActivity());
 		JsonParse parse = new JsonParse(adapter);
-		parse.execute("/items");
+		parse.execute(path);
 		setListAdapter(adapter);
 	}
 	
