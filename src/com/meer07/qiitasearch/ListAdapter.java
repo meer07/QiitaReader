@@ -29,8 +29,17 @@ public class ListAdapter extends ArrayAdapter<Item> {
 		
 		Item item = getItem(position);
 		
+		// タイトルをセット
+		TextView title = (TextView)view.findViewById(R.id.title);
+		title.setText(item.title);
+		
+		// タグをセット
 		TextView tag = (TextView)view.findViewById(R.id.tag);
 		tag.setText(item.tag);
+		
+		// 投稿からの経過時間をセット
+		TextView time = (TextView)view.findViewById(R.id.time);
+		time.setText(item.time);
 		
 		return view;
 	}

@@ -3,17 +3,23 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Item implements Parcelable{
-	public String tag; // タグになっているがここではタイトル
+	public String title; // タイトル　
+	public String tag; // タグ
 	public String url; // リンクのURL
+	public String time; // 投稿からの経過時間
 
 	public Item(String[] list){
-		this.tag = list[0];
+		this.title = list[0];
 		this.url = list[1];
+		this.tag = list[2];
+		this.time = list[3];
 	}
 	
 	public Item(Parcel in){
-		this.tag = in.readString();
+		this.title = in.readString();
 		this.url = in.readString();
+		this.tag = in.readString();
+		this.time = in.readString();
 	}
 	
 	@Override
@@ -25,8 +31,10 @@ public class Item implements Parcelable{
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		// TODO Auto-generated method stub
+		dest.writeString(title);
 		dest.writeString(tag);
 		dest.writeString(url);
+		dest.writeString(time);
 	}
 
 	public static final Creator<Item> CREATOR = new Creator<Item>(){

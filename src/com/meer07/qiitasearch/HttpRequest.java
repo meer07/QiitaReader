@@ -13,13 +13,14 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.util.Log;
+import android.widget.Toast;
 
 public class HttpRequest {
 	public String Request(String path){
 		try {
 			String line;
 			StringBuilder builder = new StringBuilder();
-			String urlString = "https://qiita.com/api/v1/items";
+			String urlString = path;
 		
 			HttpClient client = new DefaultHttpClient();
 			HttpGet method = new HttpGet(URI.create(urlString));

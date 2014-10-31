@@ -17,9 +17,10 @@ public class JsonParse extends AsyncTask<String, Integer, List<NewPost>>{
 	}
 	
 	// Gsonを利用してNewPostクラスにparse
-	public List<NewPost> jsonParse(String path){
+	public List<NewPost> json_Parse(String path){
 		HttpRequest request = new HttpRequest();
-		String jsonString = request.Request(path);		
+		String jsonString = request.Request(path);
+		Log.d("JSON",jsonString);
 		Gson gson = new Gson();
 		List<NewPost> timeline = gson.fromJson(jsonString,new TypeToken<List<NewPost>>(){}.getType());
 		
@@ -32,19 +33,28 @@ public class JsonParse extends AsyncTask<String, Integer, List<NewPost>>{
 		// TODO Auto-generated method stub
 		String path = params[0];
 		Log.d("myapp", path);
-		List<NewPost> posts = jsonParse(path);
+		List<NewPost> posts = json_Parse(path);
 		return posts;
 	}
 	
 	// 第二段階のパースを行った後、アダプタにデータを追加する 
 	@Override
     protected void onPostExecute(List<NewPost> posts){
-		for (int i = 0; i < posts.size(); i++) {
-			NewPost post = posts.get(i);
-			String title = new String(post.title);
-			String url = new String(post.url);
-			String[] list = {title,url};
-			adapter.add(list);
+		String tag = "";
+		if(posts != null){
+			for (int i = 0; i < posts.size(); i++) {
+				NewPost post = posts.get(i);
+				String title = new String(post.getTitle());
+				String url = new String(post.getURL());
+				String time = new String(post.getCreateTimes());
+			
+				for (Tags tags : post.getTags()) {
+					tag = tags.getName();
+				}
+			
+				String[] list = {title,url,tag,time};
+				adapter.add(list);
+			}
 		}
 	}
 }
