@@ -37,9 +37,13 @@ public class ListAdapter extends ArrayAdapter<Item> {
 		TextView tag = (TextView)view.findViewById(R.id.tag);
 		tag.setText(item.tag);
 		
+		// ストック数をセット
+		TextView stock = (TextView)view.findViewById(R.id.stock);
+		stock.setText(item.stock+" "+"ストック");
+		
 		// 投稿からの経過時間をセット
 		TextView time = (TextView)view.findViewById(R.id.time);
-		time.setText(item.time);
+		time.setText(item.time+"前");
 		
 		return view;
 	}

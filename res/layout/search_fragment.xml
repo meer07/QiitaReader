@@ -21,29 +21,30 @@
 	    	android:layout_width="match_parent"
 	    	android:layout_height="match_parent"
 	    	android:layout_gravity="center"
-	    	android:text = "NO DATA"/>
+	    	android:text=""/>
 		
 	</LinearLayout>
 	
 	<LinearLayout 
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="225dp"
         android:layout_weight="4">
 			
     	<EditText
 	    	android:id="@+id/searchbar"
 	    	android:layout_width="match_parent"
 	    	android:layout_height="match_parent"
-	    	android:inputType="text"
+	    	android:inputType="textNoSuggestions"
 	    	android:layout_weight="1"
 	    	/>
 	
-		<Button 
+		<ImageButton
 	    	android:id="@+id/searchbutton"
 	    	android:layout_width="match_parent"
 	    	android:layout_height="match_parent"
 	    	android:layout_weight="4"
+	    	android:src="@drawable/ic_action_search"
 	    	/>
 	</LinearLayout>
 	

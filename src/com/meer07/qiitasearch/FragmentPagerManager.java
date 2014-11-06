@@ -12,6 +12,7 @@ public class FragmentPagerManager extends FragmentPagerAdapter {
 		// TODO Auto-generated constructor stub
 	}
 
+	// タブ管理
 	@Override
 	public ListFragment getItem(int position) {
 		// TODO Auto-generated method stub
@@ -19,9 +20,12 @@ public class FragmentPagerManager extends FragmentPagerAdapter {
 		case 0:
 			TimeLineFragment t_fragment = new TimeLineFragment();
 			return t_fragment;
-		default:
+		case 1:
 			SearchFragment s_fragment = new SearchFragment();
 			return s_fragment;
+		default:
+			BookMarkFragment b_fragment = new BookMarkFragment();
+			return b_fragment;
 		}
 	}
 

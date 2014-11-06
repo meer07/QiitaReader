@@ -29,7 +29,7 @@
         <item name="android:actionModeBackground">@drawable/cab_background_top_tab</item>
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_tab</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Tab</item>
-		<item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+        
                 <!-- Light.DarkActionBar specific -->
         <item name="android:actionBarWidgetTheme">@style/Theme.Tab.Widget</item>
 
@@ -45,7 +45,6 @@
     <style name="ActionBar.Transparent.Tab" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@drawable/ab_transparent_tab</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Tab</item>
-        
     </style>
 
     <style name="PopupMenu.Tab" parent="@android:style/Widget.Holo.ListPopupWindow">
@@ -80,8 +79,4 @@
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Tab</item>
     </style>
 
-    <style name="MyActionBarTabText"
-           parent="@android:style/Widget.Holo.Light.ActionBar.TabText">
-        <item name="android:textColor">#000000</item>
-    </style>
 </resources>

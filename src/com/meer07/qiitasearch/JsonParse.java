@@ -47,12 +47,13 @@ public class JsonParse extends AsyncTask<String, Integer, List<NewPost>>{
 				String title = new String(post.getTitle());
 				String url = new String(post.getURL());
 				String time = new String(post.getCreateTimes());
-			
+				String stock = new String(post.getStock());
+				
 				for (Tags tags : post.getTags()) {
 					tag = tags.getName();
 				}
 			
-				String[] list = {title,url,tag,time};
+				String[] list = {title,url,tag,time,stock};
 				adapter.add(list);
 			}
 		}

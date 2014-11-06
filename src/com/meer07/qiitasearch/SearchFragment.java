@@ -10,18 +10,19 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 public class SearchFragment extends ListFragment {
 	protected String path;
-	protected Button seachButton;
+	protected ImageButton seachButton;
 	protected EditText searchEditText;
 	protected ListAdapter adapter;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		path = "";
+		path = "https://qiita.com/api/v1/search?q=";
 	}
 	
 	@Override
@@ -39,7 +40,7 @@ public class SearchFragment extends ListFragment {
 	
 	public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.search_fragment, container, false);
-		seachButton = (Button)v.findViewById(R.id.searchbutton);
+		seachButton = (ImageButton)v.findViewById(R.id.searchbutton);
 		searchEditText = (EditText)v.findViewById(R.id.searchbar);
 		return v;
 	}
@@ -51,7 +52,7 @@ public class SearchFragment extends ListFragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				path = "https://qiita.com/api/v1/search/?q="+searchEditText.getText().toString();
+				path = "https://qiita.com/api/v1/search?q="+searchEditText.getText().toString()+"&sort=stock&per_page=100";
 				adapter = new ListAdapter(getActivity());
 				JsonParse parse = new JsonParse(adapter);
 				parse.execute(path);
@@ -68,8 +69,10 @@ public class SearchFragment extends ListFragment {
 			public void onItemClick(AdapterView<?> parent,View view,int position, long id){
 				Item item = adapter.getItem(position);
 				String urlString = item.url;
+				String title = item.title;
 				Intent intent = new Intent(getActivity(),DetailActivity.class);
 				intent.putExtra("URL", urlString);
+				intent.putExtra("title", title);
 				startActivity(intent);
 			}
 		});

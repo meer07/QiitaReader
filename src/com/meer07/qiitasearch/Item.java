@@ -7,12 +7,14 @@ public class Item implements Parcelable{
 	public String tag; // タグ
 	public String url; // リンクのURL
 	public String time; // 投稿からの経過時間
-
+	public String stock;
+	
 	public Item(String[] list){
 		this.title = list[0];
 		this.url = list[1];
 		this.tag = list[2];
 		this.time = list[3];
+		this.stock = list[4];
 	}
 	
 	public Item(Parcel in){
@@ -20,6 +22,7 @@ public class Item implements Parcelable{
 		this.url = in.readString();
 		this.tag = in.readString();
 		this.time = in.readString();
+		this.stock = in.readString();
 	}
 	
 	@Override
@@ -35,6 +38,7 @@ public class Item implements Parcelable{
 		dest.writeString(tag);
 		dest.writeString(url);
 		dest.writeString(time);
+		dest.writeString(stock);
 	}
 
 	public static final Creator<Item> CREATOR = new Creator<Item>(){
