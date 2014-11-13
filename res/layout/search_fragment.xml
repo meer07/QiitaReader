@@ -7,28 +7,7 @@
     <LinearLayout 
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-        
-        <ListView 
-	    	android:id ="@id/android:list"
-	    	android:layout_width="match_parent"
-	    	android:layout_height="match_parent"
-	    	android:drawSelectorOnTop="false"/>
-	
-		<TextView
-	    	android:id="@id/android:empty"
-	    	android:layout_width="match_parent"
-	    	android:layout_height="match_parent"
-	    	android:layout_gravity="center"
-	    	android:text=""/>
-		
-	</LinearLayout>
-	
-	<LinearLayout 
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="225dp"
+        android:layout_height="200dp"
         android:layout_weight="4">
 			
     	<EditText
@@ -48,4 +27,24 @@
 	    	/>
 	</LinearLayout>
 	
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        <ListView 
+	    	android:id ="@id/android:list"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+	    	android:drawSelectorOnTop="false"/>
+	
+		<TextView
+	    	android:id="@id/android:empty"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+	    	android:layout_gravity="center"
+	    	android:text=""/>
+		
+	</LinearLayout>
 </LinearLayout>

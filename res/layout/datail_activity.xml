@@ -6,7 +6,7 @@
     
 <fragment
     android:id = "@+id/detailfragment"
-    android:name="com.meer07.qiitasearch.DetailFragment"
+    android:name="com.meer07.qiitamagazine.DetailFragment"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     />
