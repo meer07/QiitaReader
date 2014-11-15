@@ -11,12 +11,13 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+
+import com.meer07.qiitamagazine.R;
 
 public class SearchFragment extends ListFragment {
 	protected String path;
@@ -83,7 +84,7 @@ public class SearchFragment extends ListFragment {
 				// TODO Auto-generated method stub
 				progressDialog = new ProgressDialog(getActivity());
 				progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-				progressDialog.setMessage("検索中です");
+				progressDialog.setMessage(getString(R.string.querying));
 				progressDialog.setCancelable(true);
 				progressDialog.show();
 				

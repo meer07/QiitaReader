@@ -62,7 +62,7 @@ public class DetailActivity extends Activity {
 		db.saveBookMark(title, url);
 		db.closeDatabase();
 
-		Toast.makeText(this, "ブックマークしました", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, getString(R.string.bookmarked), Toast.LENGTH_SHORT).show();
 	}
 
 	@Override

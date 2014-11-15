@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.meer07.qiitamagazine.R;
-
 public class TimeLineFragment extends ListFragment implements SwipeRefreshLayout.OnRefreshListener{
 	private final String path = "https://qiita.com/api/v1/items?per_page=100";
 	private Thread thread;
@@ -133,7 +131,7 @@ public class TimeLineFragment extends ListFragment implements SwipeRefreshLayout
 	private void setList() {
 		progressDialog = new ProgressDialog(getActivity());
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setMessage("新着投稿を受信しています");
+		progressDialog.setMessage(getString(R.string.loading_newposts));
 		progressDialog.setCancelable(true);
 		progressDialog.show();
 
