@@ -1,18 +1,21 @@
 package com.meer07.qiitamagazine;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URLEncoder;
+
+import android.accounts.NetworkErrorException;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+
 public class HttpRequest {
-	public String Request(String path){
+	public String Request(String path) throws NetworkErrorException {
 		try {
 			String line;
 			StringBuilder builder = new StringBuilder();
@@ -27,12 +30,18 @@ public class HttpRequest {
 			while ((line = reader.readLine()) != null) {
 				builder.append(line);
 			}
+
+            if( response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+            {
+                throw new NetworkErrorException(builder.toString());
+            }
 			
 			return builder.toString();
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			return null;
+            throw new NetworkErrorException(e);
+//			return null;
 		}
 		
 	}

@@ -9,8 +9,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
-import com.meer07.qiitamagazine.R;
-
 @SuppressWarnings("deprecation")
 public class MainActivity extends FragmentActivity implements TabListener{
 	private ViewPager pager;
@@ -24,9 +22,9 @@ public class MainActivity extends FragmentActivity implements TabListener{
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// タブをセット
-		actionBar.addTab(getActionBar().newTab().setText("新着投稿").setTabListener(this));
-		actionBar.addTab(getActionBar().newTab().setText("キーワード検索").setTabListener(this));
-		actionBar.addTab(getActionBar().newTab().setText("ブックマーク").setTabListener(this));
+		actionBar.addTab(getActionBar().newTab().setText(getString(R.string.newpost)).setTabListener(this));
+		actionBar.addTab(getActionBar().newTab().setText(getString(R.string.search)).setTabListener(this));
+		actionBar.addTab(getActionBar().newTab().setText(getString(R.string.bookmarks)).setTabListener(this));
 		int tab_count = actionBar.getTabCount();
 
 

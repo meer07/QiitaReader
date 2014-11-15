@@ -18,8 +18,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import com.meer07.qiitamagazine.R;
-
 public class SearchFragment extends ListFragment {
 	protected String path;
 	protected ListAdapter adapter;
@@ -114,7 +112,7 @@ public class SearchFragment extends ListFragment {
 	private void stratSearch() {
 		progressDialog = new ProgressDialog(getActivity());
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setMessage("検索中です");
+		progressDialog.setMessage(getString(R.string.querying));
 		progressDialog.setCancelable(true);
 		progressDialog.show();
 
